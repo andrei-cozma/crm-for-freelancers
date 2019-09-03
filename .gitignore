@@ -6,6 +6,10 @@
 .env
 .env.backup
 .phpunit.result.cache
+.editorconfig
+.gitattributes
+.idea
+.styleci.yml
 Homestead.json
 Homestead.yaml
 npm-debug.log
