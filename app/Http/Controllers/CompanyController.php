@@ -26,7 +26,9 @@ class CompanyController extends Controller
      */
     public function create()
     {
-        return view('companies.create');
+        $company = new Company();
+
+        return view('companies.create', compact('company'));
     }
 
     /**
@@ -72,7 +74,7 @@ class CompanyController extends Controller
      */
     public function edit(Company $company)
     {
-        //
+        return view('companies.edit', compact('company'));
     }
 
     /**
@@ -84,7 +86,18 @@ class CompanyController extends Controller
      */
     public function update(Request $request, Company $company)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'unique_registration_code' => '',
+            'trade_register_number' => '',
+            'city' => '',
+            'address' => '',
+            'hourly_rate' => '',
+        ]);
+
+        $company->update($data);
+
+        return redirect('companies');
     }
 
     /**
@@ -95,6 +108,8 @@ class CompanyController extends Controller
      */
     public function destroy(Company $company)
     {
-        //
+        $company->delete();
+
+        return redirect('companies');
     }
 }

@@ -23,6 +23,7 @@ Route::get('/contacts', 'ContactController@index');
 Route::get('/contacts/create', 'ContactController@create');
 Route::post('/contacts', 'ContactController@store');
 
-Route::get('/companies', 'CompanyController@index');
-Route::get('/companies/create', 'CompanyController@create');
-Route::post('/companies/store', 'CompanyController@store');
+
+Route::resources([
+    'companies' => 'CompanyController'
+]);
