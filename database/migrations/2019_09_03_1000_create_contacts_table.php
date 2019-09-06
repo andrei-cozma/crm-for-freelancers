@@ -21,7 +21,7 @@ class CreateContactsTable extends Migration
             $table->string('last_name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
-            $table->decimal('standard_rate', 10, 2)->nullable();
+            $table->decimal('hourly_rate', 10, 2)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

@@ -17,6 +17,11 @@ class CreateCompaniesTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->string('name');
+            $table->string('unique_registration_code')->nullable();
+            $table->string('trade_register_number')->nullable();
+            $table->string('city')->nullable();
+            $table->string('address')->nullable();
+            $table->decimal('hourly_rate', 10, 2)->nullable();
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')

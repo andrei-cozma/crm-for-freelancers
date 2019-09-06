@@ -25,3 +25,4 @@ Route::post('/contacts', 'ContactController@store');
 
 Route::get('/companies', 'CompanyController@index');
 Route::get('/companies/create', 'CompanyController@create');
+Route::post('/companies/store', 'CompanyController@store');

@@ -37,7 +37,20 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required',
+            'unique_registration_code' => '',
+            'trade_register_number' => '',
+            'city' => '',
+            'address' => '',
+            'hourly_rate' => '',
+        ]);
+
+        $data = array_merge($data, ['user_id' => auth()->user()->id]);
+
+        Company::create($data);
+
+        return redirect('companies');
     }
 
     /**
