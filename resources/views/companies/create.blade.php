@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
-                <form action="/companies/store" method="post" role="form">
+                <form action="/companies" method="post" role="form">
                     @include('companies.form')
                     <div class="box-footer">
                         @csrf
