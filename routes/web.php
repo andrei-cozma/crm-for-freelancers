@@ -27,3 +27,6 @@ Route::post('/contacts', 'ContactController@store');
 Route::resources([
     'companies' => 'CompanyController'
 ]);
+
+Route::view('/tickets/create', 'tickets.create');
+Route::post('/tickets', 'TicketController@store');
