@@ -221,6 +221,7 @@
                 <li class="header">HEADER</li>
                 <li><a href="/contacts"><i class="fa fa-users"></i> <span>Contacte</span></a></li>
                 <li><a href="/companies"><i class="fa fa-building"></i> <span>Companii</span></a></li>
+                <li><a href="/tickets/create"><i class="fa fa-ticket"></i> Deschide tichet</a></li>
             </ul>
             <!-- /.sidebar-menu -->
         </section>
@@ -242,6 +243,13 @@
 
         <!-- Main content -->
         <section class="content container-fluid">
+            @if(session()->has('success'))
+                <div class="alert alert-success alert-dismissible">
+                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                    <h4><i class="icon fa fa-check"></i> Succes!</h4>
+                    {{ session()->get('success') }}
+                </div>
+            @endif
 
            @yield('content')
 
