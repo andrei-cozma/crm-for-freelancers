@@ -13,10 +13,18 @@ class RecurrentServiceController extends Controller
         $this->middleware('auth');
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        $recurrentServices = RecurrentService::mine()->get();
+
+        if ($request->isXmlHttpRequest()) {
+            return response()->json([
+                'recurrentServices' => $recurrentServices
+            ], 200);
+        }
+
         return view('recurrent-services.index', [
-            'recurrentServices' => RecurrentService::mine()->get()
+            'recurrentServices' => $recurrentServices
         ]);
     }
 

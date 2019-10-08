@@ -59,6 +59,7 @@
                                     <a href="/companies/{{ $company->id }}/edit">
                                         <i class="fa fa-edit"></i> Modifica
                                     </a>
+                                    <a href="{{ route('companies.show', ['company' => $company]) }}">view</a>
                                     <form action="/companies/{{ $company->id }}" method="post">
                                         @method('DELETE')
                                         @csrf
