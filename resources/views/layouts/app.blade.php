@@ -221,6 +221,7 @@
                 <li class="header">HEADER</li>
                 <li><a href="/contacts"><i class="fa fa-users"></i> <span>Contacte</span></a></li>
                 <li><a href="/companies"><i class="fa fa-building"></i> <span>Companii</span></a></li>
+                <li><a href="{{ route('recurrent-services.index') }}"><i class="fa fa-circle-o-notch"></i> Servicii recurente</a></li>
                 <li><a href="/tickets/create"><i class="fa fa-ticket"></i> Deschide tichet</a></li>
             </ul>
             <!-- /.sidebar-menu -->
