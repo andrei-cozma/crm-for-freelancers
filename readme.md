@@ -1,4 +1,4 @@
-#CRM for Freelancers
+# CRM for Freelancers
 Managing your backoffice activities should be as easy and quickly as possible.   
 With a good CRM you would have more time for doing the money making activity. 
 ## About project
