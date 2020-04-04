@@ -8,6 +8,16 @@ use Illuminate\Support\Facades\Mail;
 
 class TicketController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function create()
+    {
+        return view('tickets.create');
+    }
+
     public function store(Request $request)
     {
         $data = $request->validate([

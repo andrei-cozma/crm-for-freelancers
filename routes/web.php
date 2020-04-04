@@ -1,12 +1,8 @@
 <?php
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/contacts', 'ContactController@index');
 Route::get('/contacts/create', 'ContactController@create');
@@ -18,5 +14,5 @@ Route::resources([
     'recurrent-services' => 'RecurrentServiceController'
 ]);
 
-Route::view('/tickets/create', 'tickets.create');
+Route::get('/tickets/create', 'TicketController@create');
 Route::post('/tickets', 'TicketController@store');
